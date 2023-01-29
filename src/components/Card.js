@@ -7,7 +7,7 @@ function Card() {
   const [advice, setAdvice] = useState();
 
   const getAdvice = () => {
-    fetch('https://api.adviceslip.com/advice')
+    fetch('http://api.adviceslip.com/advice')
       .then((res) => res.json())
       .then((data) => {
         const { id, advice } = data.slip;
