@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Card.css';
+import Button from './Button';
 
 function Card() {
   const [title, setTitle] = useState();
@@ -15,6 +16,7 @@ function Card() {
       });
   };
 
+  // runs the api get function immediately, not just on click
   useEffect(getAdvice, []);
 
   return (
@@ -26,9 +28,9 @@ function Card() {
         <img src="./images/pattern-divider-desktop.svg" alt="" />
       </div>
 
-      <button id="advice-btn" className="container" onClick={getAdvice}>
+      <Button handleClick={getAdvice}>
         <img src="./images/icon-dice.svg" alt="" />
-      </button>
+      </Button>
     </article>
   );
 }
